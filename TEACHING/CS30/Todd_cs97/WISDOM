@@ -1,0 +1,31 @@
+Keep in mind that the overall goal is to excite people about computing, more than any specific technical thing.  So that argues for some of the things above.
+
+Make the course pass/fail to limit anxiety about grades, help foster them to experiment and not worry about making mistakes?
+
+More general ways to encourage making mistakes:
+ - give very positive feedback when people give answers that are wrong
+ 	- "great idea!"
+ - give neutral feedback when people give answers that are correct
+
+IMPORTANT:  MAKE SURE TO EXPLICITLY ENCOURAGE AND PRAISE FIRST!
+Then talk about what could be improved.
+
+Does asking "who understands this?" as I do often to gauge their understanding, intimidate the ones who don't understand?
+- maybe better is to pose a problem, give multiple choices and have people raise hands to make a choice
+- then no explicit categorization into understand / don't understand
+
+Common complaint in surveys and the final course evaluations:  NEED MORE PRACTICE PROBLEMS!
+
+Should we try to explicitly target people from the College of Letters and Sciences too?  How hard is it for them to transfer to CS if they end up wanting to?
+- we won't increase diversity unless SEAS accepts many more females than currently, or if we get people from the other colleges
+
+make Piazza posting anonymous by default (or if necessary anonymous only) -- people don't know how to post anonymously and don't want to post otherwise.
+
+introduce print for debugging early on.  more generally, interactive things are fun!  e.g., the rock paper scissors thing could be more interactive -- first ask someone's name, then address them by name to ask for their move, etc.  it's ok to use prints first and introduce functions (soon) after.
+
+Related:  GUI stuff is fun.  Right now they think that is a totally different world.  It would be cool to have something where we give them a GUI library and they build a simple game or something.  Could be a kind of "capstone project" -- larger-scale than a typical homework.  They would come out with a real sense of accomplishment.  This could also give them useful experience working in teams, potentially.
+
+Picobot is disconnected from the rest of the course, though some students enjoyed it.  Try to motivate or better integrate, or else cut it.  The point is to do some interesting algorithmic thing -- isn't it cool that you wrote a maze-solving program?
+One suggestion was to later do some of this functionality (e.g., maybe painting the whole screen) in Python with loops or recursion.  Would tie things together.
+- Thought:  Do that with turtle?
+

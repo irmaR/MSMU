@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1527200187 source:/home/irma/Documents/WORK/MSMU/TEACHING/MTH125/Code/Chapter6/SelfCheck/SelfCheck4/main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+

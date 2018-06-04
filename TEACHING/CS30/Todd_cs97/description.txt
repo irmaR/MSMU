@@ -1,0 +1,6 @@
+
+Title: Principles and Practices of Computing
+
+Description:
+
+This course is intended for students who do not have prior programming experience, as a precursor to the existing introductory course sequence (CS31, CS32, and CS33).  The course aims to illustrate the power and fun of computing through a variety of applications.  It also aims to teach students how to use computers as a tool for problem solving, creativity, and exploration via the design and implementation of computer programs.

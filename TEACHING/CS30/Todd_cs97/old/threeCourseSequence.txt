@@ -1,0 +1,70 @@
+
+Principles and Practices of Computing
+========================
+
+Computation pervades all aspects of our society.  Whether you are an
+artist, a policymaker, a scientist, or a business owner, your work
+will require you to use and understand computing technology.
+Moreover, if used and understood properly, computing can lead to new
+advances across these fields.  While the particular technologies
+change over time, there are several fundamental ideas and principles
+that underpin the power and pervasiveness of computing.  This 3-course
+sequence aims to convey those principles to students outside of
+Computer Science and to ground the principles in the context of the
+computing practices of today and tomorrow.
+
+Units: 4 per course
+
+Programming Language: Python
+
+Texts:
+9 Algorithms that Changed the Future, by John MacCormick
+Explorations in Computing: An Introduction to Computer Science and Python Programming, by John Conery
+
+
+Part I: Applications to Art and Media
+-----------------------------
+
+Topics:
+Programming constructs: assignment, conditionals, iteration, recursion
+Data structures: arrays, lists, dictionaries
+Program development: Functional decomposition, testing, debugging
+Great ideas: graphics and vision, sorting, logic and bits, and more
+
+Projects will convey these ideas through art and media applications.
+Students will explore approaches to create, represent, and manipulate
+images, animations, and music.
+
+
+
+Part II: Applications to Data Science
+-----------------------------
+
+Topics:
+Programming constructs: lambdas, comprehensions, exceptions
+Data structures: objects and classes
+Program development: Modules and libraries, application programming interfaces
+Great ideas: cryptography, machine learning, databases, and more
+
+Projects will convey these ideas through data science applications.
+Students will learn techniques for data collection, cleaning,
+analysis, and visualization on a variety of real-world data sets
+(election polls and results, literature texts, etc.).
+
+
+Part III: Applications to Web and Mobile
+-------------------------------
+
+Topics:
+Programming constructs: events, callbacks, threads, synchronization
+Data structures: trees and graphs
+Program development: client-server architecture, network programming
+Great ideas: the internet, computability, randomness, and more
+
+Projects will convey these ideas through the development of web and
+mobile applications.  Students will build rudimentary versions of a
+web server, web crawler, search engine, and automated personal
+assistant.
+
+
+

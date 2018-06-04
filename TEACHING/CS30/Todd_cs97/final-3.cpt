@@ -1,0 +1,12 @@
+
+\begin{verbatim}
+def sumToK(k, l):
+    count = 0
+    i = 0
+    while i < len(l):
+        if sum(l[i]) == k:
+            count += 1
+        i += 1
+    return count
+\end{verbatim}
+^^E^^L 

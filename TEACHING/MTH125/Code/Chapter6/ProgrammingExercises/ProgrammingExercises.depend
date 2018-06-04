@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1527815774 source:/home/irma/Documents/WORK/MSMU/TEACHING/MTH125/Code/Chapter6/ProgrammingExercises/main.cpp
+	<iostream>
+	<ctime>
+

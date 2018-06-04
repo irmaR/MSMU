@@ -1,0 +1,16 @@
+Write a function named clone that takes an item e and a nonnegative integer n and returns a list containing n copies of e.  For example, clone('hi', 4) returns ['hi', 'hi', 'hi', 'hi'].
+
+Write a function named count that takes an item e and a list l and returns the number of occurrences of e in l.
+
+Write a function named minimum that returns the smallest element in a list of integers.  You may assume the list is non-empty.
+
+Write a function named q that checks that every number in a list that is between 10 and 100 (inclusive) is even.  For example, q([1,12,153,84,64,9]) returns True.
+
+Write a function named tails that takes a list and returns a list of lists containing the original list along with all tails of the list, from longest to shortest.  For example, tails([1,2,3]) is [[1,2,3], [2,3], [3], []].
+
+Write a function named flatten that takes a list of lists and flattens it into a single list.  For example, flatten([[1,2], [3], [], [4,5,6]]) returns [1,2,3,4,5,6].
+
+Write a function pairify that takes a list and pairs up consecutive elements of the list.  If the list has an odd length, then the last element should be dropped from the result.   For example, pairify([1,2,3,4,5]) returns [[1,2], [3,4]].
+
+Write a function named rmDups that removes consecutive duplicates from a list.  For example, rmDups([1,2,2,3,3,3,4,2,2,3]) returns [1, 2, 3, 4, 2, 3].
+

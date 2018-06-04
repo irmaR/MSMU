@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+lang="en"><head><title>Homework 2</title>
+</head>
+
+
+<body>
+
+<h1>Homework 2</h1>
+
+<h2>Due Monday, October 23, at 11:30pm</h2>
+
+<h3>Turn in your homework via the CCLE web page for our course as an updated version of the <tt>hw2.py</tt> and <tt>hw2_turtle.py</tt> files that I have provided.   <b>Make sure to use exactly these file names!</b>
+
+<h3>Make sure that each file can be executed without any syntax or other errors into the Python interpreter; otherwise you will get a 0 on that part of the homework!</h3>
+
+<h3>Recall the CS97 Academic Honesty Policy!  You must list whom you
+discussed the assignment with at the top of your assignment, and also what
+other resources you used.  You can list that as a comment at the top of the <tt>hw2.py</tt> file.</h3>
+
+In this assignment you'll get practice writing recursive functions in Python.
+Test your code on several inputs, including special cases --
+we will be doing the same.  I have included code in <tt>hw2.py</tt> to automatically run tests that are written in docstrings using the <tt>doctest</tt> library that was shown in class (see the notes for October 9).  For example, here is a function with a single test:
+
+<p><tt>def square(x):<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;"""Squares its argument.<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;>>> square(3)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;9<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;"""<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;return x * x
+</tt>
+
+<p><b><i>IMPORTANT RULES!</i> Do not use any Python libraries other than <tt>turtle</tt> (needed for the second problem below).  Do not use any built-in functions of Python that have not been discussed in lecture.  Do not use any language features of Python that have not been discussed in lecture.  If in doubt, ask!</b>
+
+<p>
+Now on to the assignment!
+
+<h3>Problem #1:  Manipulating Lists</h3>
+
+These problems should each be solved by writing a single, recursive function.  <b><i>ANOTHER IMPORTANT RULE!</i> You may not define any helper functions for this part of the assignment -- the answer to each problem should be a single recursive function</b>.
+
+<ol type="a">
+<li> Write a function <tt>doubleAll</tt> that accepts an integer list <tt>l</tt> and returns a new list that is identical to <tt>l</tt> but with each value doubled.  For example, <tt>doubleAll([1,2,3])</tt> returns <tt>[2,4,6]</tt>.<p></li>
+
+<li> Write a function <tt>countPos</tt> that accepts an integer list <tt>l</tt> and returns the number of elements of the list that are positive.  For example, <tt>countPos([1, -4, 0, 4, 8, 0])</tt> returns <tt>3</tt>.<p></li>
+
+<li> Write a function <tt>intRange</tt> that accepts two integers <tt>low</tt> and <tt>high</tt> and returns a list of all integers in the range between <tt>low</tt> and <tt>high</tt> inclusive.  For example, <tt>intRange(2, 5)</tt> returns <tt>[2,3,4,5]</tt>.<p></p></li>
+
+<li>Write a function <tt>merge</tt> that accepts two integer lists <tt>l1</tt> and <tt>l2</tt> that are each sorted from least to greatest and produces a new list that contains the elements of both lists, also sorted from least to greatest.  Note that duplicates are allowed, both within and across lists.  For example, <tt>merge([1,2,4], [2,3,3,5])</tt> returns <tt>[1,2,2,3,3,4,5]</tt>.<p></li>
+</ol>
+
+
+<h3>Problem #2:  Turtle Graphics</h3>
+
+<a href="https://en.wikipedia.org/wiki/Turtle_graphics">Turtle graphics</a> is a simple, fun, and powerful way to write programs that draw shapes.  The program simply commands a turtle to move around a canvas, and the path of the turtle is the shape that is drawn.  Python has a library called <tt>turtle</tt> that supports turtle graphics.  You can see its documentation <a href="https://docs.python.org/3.3/library/turtle.html">here</a>.  
+
+<p>There are lots of commands, but we will only be using two of them:  <tt>forward(d)</tt> moves the turtle forward for distance <tt>d</tt> (a number), and <tt>left(a)</tt> turns the turtle left by <tt>a</tt> degrees.  We will play a bit with these commands in class on Wednesday, but it's easy to try yourself!	 When you enter one of these commands at the Python prompt, you should see a canvas window open up, and the path of the turtle will be drawn.
+
+<p><b><i>A FINAL IMPORTANT RULE!</i> These problems should only use two functions from the <tt>turtle</tt> library:  <tt>forward</tt> and <tt>left</tt>.</b>  During testing, you can use the <tt>reset()</tt> function to clear the canvas.
+
+<ol type="a">
+<li>A <i>regular polygon</i> is a polygon where all sides have equal length and all angles have equal measure.  Write a function <tt>regularNGon</tt> that takes a positive integer <tt>n</tt> and a positive number (which need not be an integer) <tt>sideLength</tt> and draws a regular <tt>n</tt>-gon where each side has length <tt>sideLength</tt>.  <i>Hint: It will be useful to define another function that <tt>regularNGon</tt> calls and that does most of the work.</i>
+
+<p>For example, <tt>regularNGon(8, 100)</tt> produces the following shape:
+
+	<p><img src="http://www.cs.ucla.edu/~todd/cs97/octagon.png" width=300>
+<p></p></li>
+
+<li>Write a function <tt>archSpiral</tt> that draws an <a href="https://en.wikipedia.org/wiki/Archimedean_spiral">Archimedean spiral</a>.  The function takes four positive numbers, <tt>initialLen</tt>, <tt>increment</tt>, <tt>angle</tt>, and <tt>n</tt>, where <tt>n</tt> must be an integer.  Conceptually, the spiral should be drawn by doing the following sequence <tt>n</tt> times:  1) Draw a line segment of length <tt>initialLen</tt>.  2) Turn left by <tt>angle</tt> degrees.  3) Increment <tt>initialLen</tt> by <tt>increment</tt>.  Of course, this should be implemented as a recursive function.
+
+<p>For example, <tt>archSpiral(1, 0.5, 30, 100)</tt> produces the following shape:
+
+	<p><img src="http://www.cs.ucla.edu/~todd/cs97/archSpiral.png" width=300>
+<p></p></li>
+
+<li>Write a function <tt>logSpiral</tt> that draws a <a href="https://en.wikipedia.org/wiki/Logarithmic_spiral">logarithmic spiral</a>.  The function takes four positive numbers, <tt>initialLen</tt>, <tt>percentIncrease</tt>, <tt>angle</tt>, and <tt>n</tt>, where <tt>n</tt> must be an integer.  The only difference from the Archimedean spiral above is that at each iteration, the value of <tt>initialLen</tt> should be increased by the percentage specified in <tt>percentIncrease</tt>.
+
+<p>For example, <tt>logSpiral(1, 4, 30, 120)</tt> produces the following shape:
+
+	<p><img src="http://www.cs.ucla.edu/~todd/cs97/logSpiral.png" width=300>
+
+</ol>
+</body></html>

@@ -1,0 +1,306 @@
+\documentclass[11pt]{article}
+
+\usepackage{ifthen}
+\usepackage{cprotect}
+
+\newboolean{Solutions}
+\setboolean{Solutions}{true}
+\newcommand{\IfSolnElse}[2]{\ifthenelse{\boolean{Solutions}}{#1}{#2}}
+
+\topmargin = 0in
+\oddsidemargin = 0in
+\evensidemargin = \oddsidemargin
+\textwidth = 6.5in
+\textheight = 9in
+
+\title{Final Exam}
+
+\author{CS97: Principles and Practices of Computing}
+
+\date{Thursday, December 14, 2017}
+
+\begin{document}  
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+  \begin{flushright}
+\fbox{  
+\begin{tabular}{ll}
+  1. \hspace{.5in} & 2. \hspace{.5in} \\\\\\
+  3.& 4. \\\\\\
+\end{tabular}
+}
+\end{flushright}
+
+\vspace{.5in}
+
+Name:$\underline{\mbox{\hspace{4in}}}$
+
+\vspace{.5in}
+
+ID:$\underline{\mbox{\hspace{4.2in}}}$
+
+\vspace{0.5in}
+
+Rules of the game:
+
+\begin{itemize}
+  \item {\bf Write your name and ID number above.}
+\item The exam is closed-book and closed-notes.
+
+\item Please write your answers
+directly on the exam.  Do not turn in anything else.
+
+% \item Obey our usual OCaml style rules.
+
+% \item Except where explicitly disallowed, you can write any number of
+ % helper functions that you need.
+
+% \item If you have any questions, please ask.  
+  
+\item The exam ends promptly at 11am.
+  
+\item Read questions carefully.  Understand a question before you
+  start writing. %   {\em Note:  Some multiple-choice
+    % questions ask for a single answer, while others ask for all
+    % appropriate answers.} 
+
+\item Relax!
+\end{itemize}
+
+\begin{enumerate}
+
+\pagebreak
+
+\item (2 points each)
+Consider this function:
+
+\begin{verbatim}
+def f(x):
+    if x > 10:
+        y = x
+    elif x > 0:
+        y = 2 * x
+    else:
+        y = 0
+    return y
+\end{verbatim}
+
+\bigskip
+
+\begin{enumerate}
+\item Provide a positive integer \verb+n+ such that \verb+f(n)+ returns \verb+10+, or say NONE if no such positive integer exists.
+
+\IfSolnElse{5}{\vspace{.5in}}
+
+\item Provide a positive integer \verb+n+ such that \verb+f(n)+ returns \verb+11+, or say NONE if no such positive integer exists.
+
+\IfSolnElse{11}{\vspace{.5in}}
+\end{enumerate}
+
+\item (2 points each) Consider this function named \verb+g+, which identical to the function \verb+f+ above but with the keyword \verb+elif+ replaced by the keyword \verb+if+:
+
+\begin{verbatim}
+def g(x):
+    if x > 10:
+        y = x
+    if x > 0:
+        y = 2 * x
+    else:
+        y = 0
+    return y
+\end{verbatim}
+
+\bigskip
+
+\begin{enumerate}
+\item Provide a positive integer \verb+n+ such that \verb+g(n)+ returns a different number than \verb+f(n)+, or say NONE if no such positive integer exists.
+
+\IfSolnElse{11 (or any integer greater than 10)}{\vspace{.5in}}
+
+\item Provide a positive integer \verb+n+ such that \verb+g(n)+ returns the same number as \verb+f(n)+, or say NONE if no such positive integer exists.
+
+\IfSolnElse{1 (or any positive integer less than or equal to 10)}{}
+
+\end{enumerate}
+
+\pagebreak
+
+\item (5 points each) In this problem you will implement several versions of a function \verb+sumToK(k, l)+, which takes an integer \verb+k+ and a list of integer lists \verb+l+ and returns a count of the
+number of integer lists in \verb+l+ that sum to exactly \verb+k+.  For example, 
+\begin{center}
+\verb+sumToK(10, [[1,2], [1,2,3,4], [5,5,0], [8,2,3], [-15, 25]])+ 
+\end{center}
+returns \verb+3+,
+since 3 of the 5 inner lists in the given list 
+sum to exactly 10.
+
+{\em Note: In all versions below, you may use Python's {\tt sum} function, which sums the elements of an integer list, to sum each inner list.  You may also use other built-in Python functions (e.g., {\tt max}, {\tt min}, {\tt len}, etc.).}
+{\bf However, carefully read the requirements for each implementation in the questions below to ensure you adhere to them as well.}
+
+
+\begin{enumerate}
+
+\item Implement \verb+sumToK+ as a single recursive function.
+
+\begin{verbatim}
+def sumToK(k, l):
+    # your code goes here
+\end{verbatim}
+
+\cprotect
+\IfSolnElse{
+\begin{verbatim}
+def sumToK(k, l):
+    if l == []:
+        return 0
+    elif sum(l[0]) == k:
+        return 1 + sumToK(k, l[1:])
+    else:
+        return sumToK(k, l[1:])
+\end{verbatim}
+}{\vspace{4in}}
+
+\pagebreak
+
+\item Now implement \verb+sumToK+ as a single function that uses a {\tt for} loop instead of recursion.
+
+\begin{verbatim}
+def sumToK(k, l):
+    # your code goes here
+\end{verbatim}
+
+\cprotect
+\IfSolnElse{
+\begin{verbatim}
+def sumToK(k, l):
+    count = 0
+    for innerL in l:
+        if sum(innerL) == k:
+            count += 1
+    return count
+\end{verbatim}
+}{\vspace{3.5in}}
+
+
+\item Now implement \verb+sumToK+ as a single function that uses a {\tt while} loop instead of a {\tt for} loop.
+
+\begin{verbatim}
+def sumToK(k, l):
+    # your code goes here
+\end{verbatim}
+
+\cprotect
+\IfSolnElse{
+\begin{verbatim}
+def sumToK(k, l):
+    count = 0
+    i = 0
+    while i < len(l):
+        if sum(l[i]) == k:
+            count += 1
+        i += 1
+    return count
+\end{verbatim}
+}{}
+
+\pagebreak
+
+\item Finally, implement \verb+sumToK+  without using either loops or recursion.  Instead make use of one or more of \verb+map+, \verb+filter+, and \verb+reduce+.  {\em Note that you may still use the \verb+sum+ function and 
+other built-in Python functions.}
+
+\begin{verbatim}
+def sumToK(k, l):
+    # your code goes here
+\end{verbatim}
+
+\cprotect
+\IfSolnElse{
+\begin{verbatim}
+def sumToK_F(k, l):
+    return len(list(filter(lambda innerL: sum(innerL) == k, l)))
+\end{verbatim}
+}{}
+
+\end{enumerate}
+
+\pagebreak
+
+\item (2 points each) Consider the following code:
+
+\begin{verbatim}
+>>> myPair = [1, 2]
+>>> swap(myPair)
+>>> myPair
+\end{verbatim}
+
+\bigskip
+
+For each definition of swap below, what will the Python interpreter print after executing the last line of code above?  Circle the right answer among the five choices.
+
+\begin{enumerate}
+
+\item 
+\begin{verbatim}
+def swap(p):
+    p[0] = p[1]
+    p[1] = p[0]
+    return
+\end{verbatim}
+
+\medskip
+
+\begin{enumerate}
+\item \verb+[1, 1]+
+\item \verb+[1, 2]+
+\item \verb+[2, 1]+
+\item \verb+[2, 2]+
+\item None of the above
+\end{enumerate}
+
+\bigskip
+
+\item 
+\begin{verbatim}
+def swap(p):
+    p = [p[1], p[0]]
+    return
+\end{verbatim}
+
+\medskip
+
+\begin{enumerate}
+\item \verb+[1, 1]+
+\item \verb+[1, 2]+
+\item \verb+[2, 1]+
+\item \verb+[2, 2]+
+\item None of the above
+\end{enumerate}
+
+\bigskip
+
+\item 
+\begin{verbatim}
+def swap(p):
+    first = p[0]
+    second = p[1]
+    first = second
+    second = p[0]
+    return
+\end{verbatim}
+
+\medskip
+
+\begin{enumerate}
+\item \verb+[1, 1]+
+\item \verb+[1, 2]+
+\item \verb+[2, 1]+
+\item \verb+[2, 2]+
+\item None of the above
+\end{enumerate}
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

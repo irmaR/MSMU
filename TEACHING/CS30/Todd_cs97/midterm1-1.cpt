@@ -1,0 +1,11 @@
+
+\begin{verbatim}
+def taxes(income):
+    if income <= 37500:
+        return income * 0.12
+    elif income <= 112500:
+        return 37500 * 0.12 + (income - 37500) * 0.25
+    else:
+        return 37500 * 0.12 + (112500 - 37500) * 0.25 + (income - 112500) * 0.35
+\end{verbatim}
+^^E^^L 

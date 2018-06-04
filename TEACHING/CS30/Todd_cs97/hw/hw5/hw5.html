@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+lang="en"><head><title>Homework 5</title>
+</head>
+
+
+<body>
+
+<h1>Homework 5: Image Processing</h1>
+
+<img width="50%" src="http://www.cs.ucla.edu/~todd/cs97/florence.jpg">
+<img width="50%" src="http://www.cs.ucla.edu/~todd/cs97/florenceNeg.jpg">
+<img width="50%" src="http://www.cs.ucla.edu/~todd/cs97/florenceGrey.jpg">
+<img width="50%" src="http://www.cs.ucla.edu/~todd/cs97/florenceUpsideDown.jpg">
+<img width="50%" src="http://www.cs.ucla.edu/~todd/cs97/florenceMirror.jpg">
+
+<p>
+Original image of Sunset over Florence (the top-left image above)
+by http://www.flickr.com/people/sherseydc/ (http://flickr.com/photos/sherseydc/2954982676/) [CC-BY-SA-1.0 (http://creativecommons.org/licenses/by-sa/1.0) or CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Wikimedia Commons
+
+<h2>Due Wednesday, November 22, at 11:30pm</h2>
+
+<h3>Turn in your homework via the CCLE web page for our course as an updated version of the <tt>hw5.py</tt> file that I have provided.   <b>Make sure to use exactly this file name!</b>
+
+<h3>Make sure that the file can be executed without any syntax or other errors into the Python interpreter; otherwise you will get a 0 on the homework!</h3>
+
+<h3>Recall the CS97 Academic Honesty Policy!  You must list whom you
+discussed the assignment with at the top of your assignment, and also what
+other resources you used.  You can list that as a comment at the top of the <tt>hw5.py</tt> file.</h3>
+
+<h3>What is an image?</h3>
+
+There are many different formats for representing images in a computer.  We will use one standard and simple such format, called PPM.  In this format (as in most others), an image is represented simply as a grid of <i>pixels</i> (an abbreviation of <i>picture elements</i>), where each pixel has a single color.  That's it!
+
+<p>The PPM format uses the <a href="https://en.wikipedia.org/wiki/RGB_color_model">RGB color model</a> to represent the color of each pixel.  In this model, a color is represented by a combination of red, green, and blue light.  Each color of light is given an intensity value between 0 and 255.  For example, the RGB triple (0, 0, 0) represents the color black (no light), (255, 255, 255) represents white (all light), (0, 255, 255) represents a shade of turquoise (a mix of green and blue), and by using values between 0 and 255 for the three colors of light you can produce all kinds of colors.
+
+<p>On most computers you can view a PPM image file simply by double-clicking on it.  If that doesn't work, on Mac you can start Preview and then open the file there; on Windows you can start Microsoft Word and then open the file there.
+
+<p>The file <tt>example.ppm</tt> that I've provided is a very tiny image file, which is a grid of size 3x2 --- 3 rows and 2 columns.  If you view the image and zoom in a lot, you'll see these six pixels (the grey background is not part of the image):
+
+<p><img src="http://www.cs.ucla.edu/~todd/cs97/example.png">	
+
+<h3>Representing Images in Python</h3>
+
+We will represent an image as a list of rows, where each row is a list of pixels.  Each pixel in turn is represented as a list of exactly three integers --- the red, green, and blue intensity values.  Therefore, an image is simply a list of lists of lists of integers!
+
+<p>I have provided a function <tt>readPPM</tt> that reads a PPM file and converts it to the representation in Python described above.  For example, here is how to convert <tt>example.ppm</tt> to our representation in Python:
+
+<p><tt>
+&gt;&gt;&gt; readPPM('example.ppm')<br>
+[[[10, 23, 52], [82, 3, 215]], [[30, 181, 101], [33, 45, 205]], [[40, 68, 92], [111, 76, 1]]]<br>
+</tt>
+
+<p>You can see that the resulting list has three sublists, corresponding to the three rows of the image.  Each row contains two sublists, corresponding to the two pixels in that row.  And each pixel is a list of three numbers, representing the RGB values.  For example, the list <tt>[82, 3, 215]</tt> represents the purplish pixel that is the second pixel in the first row of the image above.
+
+<p>Though it's a much bigger image (containing thousands of pixels), the file <tt>florence.ppm</tt> that I provided can be represented in exactly the same way.  However, make sure to assign the resulting list to a variable name, for example:
+
+<p><tt>
+&gt;&gt;&gt; floImage = readPPM('florence.ppm')<br>
+</tt>
+
+<p>Otherwise, Python will slow to a crawl in attempting to print out the entire list.
+
+<p>I've also provided a function <tt>writePPM</tt> which takes an image represented as a list of list of lists of integers and writes it to a file in the PPM format.  For example, the following code writes <tt>floImage</tt> from above to a file named <tt>myFlorence.ppm</tt>:
+
+<p><tt>
+&gt;&gt;&gt; writePPM(floImage, 'myFlorence.ppm')<br>
+</tt>
+
+<p>You can use <tt>writePPM</tt> to save the images that you create in the problems below to files, in order to view them.
+
+<h3>The Assignment</h3>
+
+The file <tt>hw5.py</tt> contains definitions of five Python functions that you must implement.  Each of these functions takes an image represented as a list of lists of pixels and returns another image represented in the same way.  <b>Python's <tt>map</tt> function is a natural way to traverse the input image and produce an appropriate output image.</b>
+
+<p>
+<b>Important note on testing:</b>  Simply viewing the images that result from your functions is not a sufficient way to test!  Rather, you should test your functions in the same way that you have (hopefully) tested prior homework functions:  by running them on a set of inputs and checking that the outputs match what you expect.  In this homework, that means you should create small image lists (like the one that results from <tt>example.ppm</tt>), run your functions on them, and check that the resulting image lists have the expected contents.
+
+<P>Now on to the assignment!
+
+<ol>
+<li>Implement the function <tt>negate</tt>, which takes a list representing an image and returns a new list representing the <i>color negative</i> of that image (see the second Florence image above).  To create the color negative of an image, simply replace each color intensity value <tt>v</tt> with <tt>255-v</tt>.  <i>Hint: A <tt>map</tt> within a <tt>map</tt> will allow you to walk over all pixels; see the <tt>innerMultiply</tt> problem from the Midterm 2 Practice Problems for an example of this style.</i><p></p></li>
+
+<li>Implement the function <tt>greyscale</tt>, which takes a list representing  an image and returns a new list representing its greyscale version (see the third Florence image above).  To do so, each RGB triple should be essentially averaged, except that in practice the following formula tends to produce more pleasing pictures, so you should use it instead:  
+	<center><tt>.299 * R + .587 * G + .114 * B</tt></center>
+Applying this formula results in a real number <tt>A</tt>.  You should convert it to the nearest integer via the expression <tt>int(round(A))</tt>, which uses Python's <tt>round</tt> function to round <tt>A</tt> to the nearest integer and then the <tt>int</tt> function to convert that value (which will be of the form <tt>N.0</tt>) to an integer.  Finally, that integer should be used as the value for <i>each</i> of the three color intensities of the pixel.
+
+<p>For example, calling <tt>greyscale</tt> on the list returned from <tt>readPPM('example.ppm')</tt> (see above) should return <tt>[[[22, 22, 22], [51, 51, 51]], [[127, 127, 127], [60, 60, 60]], [[62, 62, 62], [78, 78, 78]]]</tt>.</p><p></p></li>
+</ol>
+
+<p><b>A brief interlude:</b>  We've seen that Python's <i>slicing</i> operator for lists has two (optional) arguments, a lower and upper bound.  For example, <tt>mylist[3:10]</tt> returns the substring of the list <tt>mylist</tt> between index 3 (inclusive) and 10 (exclusive).  It turns out that the slicing operator also has an optional third argument, which defaults to 1 and represents the "step size" between elements.  For example, <tt>mylist[3:10:2]</tt> returns the substring of <tt>mylist</tt> consisting of only the elements <tt>mylist[3]</tt>, <tt>mylist[5]</tt>, <tt>mylist[7]</tt>, and <tt>mylist[9]</tt>.
+
+<p>This extended version of slicing will be useful in the remaining problems.  In particular, <tt>mylist[::2]</tt> can be used to produce a version of <tt>mylist</tt> where every other element is skipped.  Even weirder, the step size can be negative, which causes the list to be traversed backward, so <tt>mylist[::-1]</tt> produces the reverse of <tt>mylist</tt>.
+
+<p>Now back to the homework assignment...
+
+
+<ol start=3>
+<li>Implement the function <tt>upsideDown</tt>, which takes a list representing an image and returns a new list representing an upside-down version of that image (see the fourth Florence image above).  Specifically, the image should be flipped on its horizontal axis (the bottom is on the top and the top is on the bottom).   <i>Hint: List reversal will be useful.</i><p></p></li>
+
+<li>Implement the function <tt>mirrorImage</tt>, which takes a list representing an image and returns a new list representing the corresponding mirror image (see the fifth Florence image above).  Specifically, the image should be flipped on its vertical axis.  <i>Hint:  List reversal will be useful.</i></li><p></p>
+
+<li>Implement the function <tt>scale</tt>, which takes a list representing  an image and returns a new list representing a version of the image scaled to half of each of its original dimensions (and so containing a quarter of the original pixels).  To do this, eliminate every other pixel in each row (scaling the image horizontally) and also eliminate every other row in the image (scaling the image vertically).<p></p></li></ol>
+
+</body></html>

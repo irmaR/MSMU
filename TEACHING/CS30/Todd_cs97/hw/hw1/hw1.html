@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+lang="en"><head><title>Homework 1</title>
+</head>
+
+
+<body>
+
+<h1>Homework 1</h1>
+
+<h2>Due Thursday, October 12, at 11:30pm</h2>
+
+<h3>Turn in your homework via the CCLE web page for our course as an updated version of the file <tt>rps.py</tt> that I have provided, along with files named 
+<tt>pico1.txt</tt> and <tt>pico2.txt</tt>.   <b>Make sure to use exactly these file names!</b>
+
+<h3>Make sure the Python code can be executed without any syntax or other errors into the Python interpreter, and similarly that the Picobot code can be copied into the Picobot Rules window and executed without any errors; otherwise you will get a 0 on that part of the homework!</h3>
+
+<h3>Recall the CS97 Academic Honesty Policy!  You must list whom you
+discussed the assignment with at the top of your assignment, and also what
+other resources you used.  You can list that as a comment at the top of the <tt>rps.py</tt> file.</h3>
+
+In this assignment you'll get practice writing your first Python functions, and also using Picobot to control a robot.  
+Test your code on several inputs, including special cases --
+we will be doing the same. 
+
+<p>
+Now on to the assignment!
+
+<h3>Problem #1:  Rock Paper Scissors</h3>
+
+In this problem you will implement a few versions of the classic game <a href="https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors">Rock Paper Scissors</a>, with a person playing against the computer.  Each version will be implemented as a Python function.  A player's choice is represented as a string and can be assumed to always be one of the three strings "rock", "paper", and "scissors".  The output of each function is a string representing the result of the game, which must be one of the three strings "person wins", "computer wins", and "tie game".  The file <tt>rps.py</tt> contains declarations of these functions but with incorrect implementations; your job is to update them.  There are four functions for you to implement:
+
+<ol type="a">
+
+<li>Implement a function <tt>rpsCheat</tt> that takes the person's choice as an argument and cheats so that the computer always wins.  <i>Hint: the body of this function is just one line of code!</i><p></li>
+
+<li>Implement a function <tt>rpsRock</tt> that takes the person's choice as an argument and uses a strategy whereby the computer always selects "rock" as its choice.<p></li>
+
+<li> Implement a function <tt>rps2</tt> that takes both the person's and the computer's choices as arguments (in that order).  Note that <tt>and</tt> is an operator in Python that performs the logical "and" operation on booleans (i.e., values <tt>True</tt> and <tt>False</tt>).  For example, the expression <tt>x>0 and y>0</tt> evaluates to <tt>True</tt> if both <tt>x</tt> and <tt>y</tt> are positive and otherwise evaluates to <tt>False</tt>.  The <tt>and</tt> operator will allow you to test the values of both players' choices in one expression.  <i>Hint: Since there are 9 possible combinations of values for the person's and computer's choice, you could use an <tt>if</tt> statement with 9 different branches.  However, it's actually possible to implement this function in a simpler way that avoids testing all 9 combinations, instead requiring only 5 branches.  How?</i><p></li>
+
+<li>Implement a function <tt>rpsRandom</tt> that takes the person's choice as an argument and picks the computer's choice randomly.  The easiest way to make this random choice is to use the <tt>choice</tt> function from the <tt>random</tt> library, which I've imported for you (see the top of the file).  Specifically, the expression <tt>choice(["rock", "paper", "scissors"])</tt> passes to the function <tt>choice</tt> a <i>list</i> of the three possible options for the computer (we will study lists in Week 2 of the quarter), and <tt>choice</tt> randomly returns one member of this list.  <b>Rather than reimplementing the logic of the game again, this function should call your earlier function <tt>rps2</tt> to do most of the work.</b><p></li>
+</ol>
+
+<h3>Problem #2:  Picobot</h3>
+
+The Picobot playground is <a href="http://web.cs.ucla.edu/~todd/picobot.html">here</a>.
+
+<ol type="a">
+<li> Write a Picobot program (i.e., a set of rules) that will cause the robot to traverse every cell in a rectangular world.  Your program should work regardless of where the robot starts from in the world.  Once you have it working, copy your rules to a text file named <tt>pico1.txt</tt>.  You can use IDLE to create and save this file, or you can use any other <a href="https://en.wikipedia.org/wiki/Text_editor">text editor</a> that you are comfortable with (<i>note that Microsoft Word is not a text editor, because it does not save its files in plain-text format</i>).  <b>Make sure that the file contains only your rules</b>;  comments (lines starting with <tt>#</tt>) are ok, but nothing else should be there.  In particular, copying the entire contents of this file back into the Picobot Rules window should result in a valid solution to the problem.<p></li>
+
+<li>Press the <tt>&#45;&#45;&gt;</tt> button to the right of the word MAP on the Picobot webpage, and you will see a maze.  Write a Picobot program that will cause the robot to traverse every cell in the maze, by implementing the <a href="https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower">right-hand rule</a>.  Once you have it working, copy your rules to a text file named <tt>pico2.txt</tt>.  Again, make sure that copying the entire contents of this file back into the Picobot Rules window results in a valid solution to the problem.</li>
+</ol>
+</body></html>

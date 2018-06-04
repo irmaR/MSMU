@@ -1,0 +1,106 @@
+
+Our CS31 course:
+http://web.cs.ucla.edu/classes/spring17/cs31/
+First two projects just use loops in main, manipulating ints/strings.
+- no abstraction (functions); no user-defined types
+Third project adds functions and use of a graphics library,
+but student code is still only manipulating primitives.
+Fourth project is to implement a library for array operations.
+Fifth project is to implement encryption/decryption
+According to the syllabus, structs/classes are introduced in week 8
+
++ some compelling applications are shown
++ step-by-step introduction to concepts
+- bottom-up order focuses on primitives and low-level programming
+- not much of a design challenge (just hack on primitives)
+- where is the abstraction?
+
+===========
+
+HMC and Berkeley seem to be contenders (see below);
+maybe a hybrid of the two?
+  TODO: investigate their hws, projects, lectures
+
+  Harvey Mudd CS1:
+  	https://interactivepython.org/courselib/static/thinkcspy/toc.html
+  	The book is here: https://www.cs.hmc.edu/csforall/
+  	Assignments:  https://www.cs.hmc.edu/twiki/bin/view/ModularCS1/AssignmentsInfo
+  The course is here: https://www.cs.hmc.edu/twiki/bin/view/CS5
+  
+  + Python has nice syntax
+  + functional programming first
+  	recursion, first-class functions
+  	allows for a focus on functional decomposition
+  + later introduces imperative and then OO
+  - no user-defined types, really
+
+  Brown CS40 uses the CSforall text -- can't access hws and lectures?
+  http://cs.brown.edu/courses/csci0040/
+
+------
+
+  This book from a Berkeley course:
+  http://composingprograms.com/
+  + Focuses on abstractions.
+  + Shows how to build your own data structures
+    out of tuples and lists (e.g., rationals, trees)
+  Inspired by SICP but with Python.
+  Here's the course:
+  https://cs61a.org/
+
+=========
+
+  How to Design Programs (Racket)
+  - too offputting syntax
+
+  CMU 15-112
+  https://www.cs.cmu.edu/~112/
+  http://www.kosbie.net/cmu/spring-17/15-112/schedule.html
+  Seems to focus on imperative programming first, maybe FP and definitely OO later
+
+  Brown
+  http://cs.brown.edu/courses/csci0170/
+  In Scheme and ML
+
+  This course on data science that Ginger helped with:
+  http://data8.org/
+
+
+IDEs to look at: PyCharm, PythonTutor (not really an IDE)
+
+Maria Klawe 201 talk:
+	set exepectation that hard work and asking for help lead to success
+
+	encourage collaboration, pair homework assignments
+
+	frame everything as creative problem solving with real life examples
+
+	encourage students to take the next course
+
+
+Note:	Python's named tuples give the flavor of declaring a struct or simple data type.
+>>> Point = collections.namedtuple('Point', ['x','y'])
+>>> p = Point(3, 4)
+>>> p = Point(x=3, y=4)
+>>> p.x
+3
+So can use this to make our own data structures.
+For variants can just create multiple of these.
+- in a dynamically typed language anyway...
+
+=========
+
+meeting with David and Paul:
+
+variables, functions, conditionals, loops, lists or other collection
+
+SciPy / Spark
+- change some code and run in a more distributed environment
+
+Add some CS50 examples as well?
+- e.g. how liberal/conservative senators are by votes
+
+Have them work in pairs?
+- see how other classes do it
+- will it be a more encouraging environment for students?
+

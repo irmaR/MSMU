@@ -1,0 +1,6 @@
+
+\begin{verbatim}
+def sumToK_F(k, l):
+    return len(list(filter(lambda innerL: sum(innerL) == k, l)))
+\end{verbatim}
+^^E^^L 

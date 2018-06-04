@@ -1,0 +1,11 @@
+
+\begin{verbatim}
+def sumToK(k, l):
+    if l == []:
+        return 0
+    elif sum(l[0]) == k:
+        return 1 + sumToK(k, l[1:])
+    else:
+        return sumToK(k, l[1:])
+\end{verbatim}
+^^E^^L 

@@ -1,0 +1,10 @@
+
+color negation
+
+black and white
+
+upsideDown: reverse the rows
+
+mirrorImage: reverse each row
+
+scale down?
