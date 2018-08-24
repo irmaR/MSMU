@@ -217,4 +217,12 @@ int main()
     //P6_2f(values,current_size);
     //P6_2g(values,current_size);
     //cout<<P6_2h(values,current_size);
+    char char_pointer[]="Harry";
+    *(char_pointer)='L';
+    //cout<<char_pointer<<endl;
+    int a=10;
+    int* p=&a;
+    //cout<<p<<endl;
+    int b;
+    cout<<b*2;
 }

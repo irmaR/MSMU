@@ -1,9 +1,0 @@
-
-\begin{verbatim}
-def makeList(f, n):
-    if n == 0:
-        return []
-    else:
-        return makeList(f, n-1) + [f(n-1)]
-\end{verbatim}
-^^E^^L 

@@ -1,6 +1,0 @@
-
-\begin{verbatim}
-def swapPairs(alist):
-    return list(map(lambda p: [p[1], p[0]], alist))
-\end{verbatim}
-^^E^^L 
